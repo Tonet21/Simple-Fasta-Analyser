@@ -44,7 +44,9 @@ for s_id, seq in sequences:
 
 summary_table = pd.DataFrame(stats, columns = ["ID","length", "GC"])
 
-def template(item):
+def template(item): 
+    ## The items are the elements from the stats list. For instance, stats[0] which would be the first dictionary.
+    
     s_id, l, cp, gc, rc, rna = item["ID"], item["length"], item["nucle"], item["GC"], item["RC"], item["rna"]
     a = cp["A"]
     c = cp["C"]
@@ -67,6 +69,7 @@ def template(item):
     RNA: {rna}
 
 """
+print(summary_table)
 
 summary_table["GC"].hist()
 plt.show()
